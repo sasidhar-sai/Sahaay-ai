@@ -1,0 +1,969 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": "PM Kisan Samman Nidhi (PM-KISAN)",
+    "nameHi": "प्रधानमंत्री किसान सम्मान निधि (पीएम-किसान)",
+    "category": "agriculture",
+    "targetPersonas": ["farmer"],
+    "summary": "Direct income support of ₹6,000 per year in three equal installments of ₹2,000 to landholding farmer families across the country.",
+    "summaryHi": "देशभर के भूमिधारक किसान परिवारों को ₹6,000 प्रति वर्ष की प्रत्यक्ष आय सहायता तीन समान किस्तों (₹2,000 प्रत्येक) में।",
+    "benefits": [
+      "₹6,000 per year directly transferred to bank accounts via DBT in 3 installments",
+      "Direct financial assistance for purchasing agricultural inputs and meeting domestic needs",
+      "Automatic linking with Kisan Credit Card (KCC) for easy crop loans"
+    ],
+    "benefitsHi": [
+      "डीबीटी के माध्यम से बैंक खातों में ₹6,000 प्रति वर्ष 3 किस्तों में सीधे अंतरित",
+      "कृषि आदानों और घरेलू जरूरतों के लिए प्रत्यक्ष वित्तीय सहायता",
+      "आसान फसली ऋण के लिए किसान क्रेडिट कार्ड से स्वचालित लिंकिंग"
+    ],
+    "hardRules": {
+      "minAge": 18,
+      "maxAge": 100,
+      "allowedOccupations": ["farmer"],
+      "maxAnnualIncome": 300000,
+      "maxLandHoldingAcres": 15,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Must own cultivable agricultural land registered in the state land records",
+      "Institutional landholders and serving/retired government employees are not eligible",
+      "e-KYC and Aadhaar-seeded bank account are mandatory"
+    ],
+    "specificConditionsHi": [
+      "राज्य के भूमि रिकॉर्ड में दर्ज कृषि योग्य भूमि का स्वामित्व होना चाहिए",
+      "संस्थागत भूमिधारक और सेवारत/सेवानिवृत्त सरकारी कर्मचारी पात्र नहीं हैं",
+      "ई-केवाईसी और आधार लिंक बैंक खाता अनिवार्य है"
+    ],
+    "documents": [
+      {
+        "name": "Aadhaar Card",
+        "nameHi": "आधार कार्ड",
+        "isMandatory": true,
+        "helpTip": "Must be linked with your mobile number for OTP verification",
+        "helpTipHi": "ओटीपी सत्यापन के लिए मोबाइल नंबर से लिंक होना चाहिए"
+      },
+      {
+        "name": "Land Ownership Record (Khatauni / RoR)",
+        "nameHi": "भू-स्वामित्व अभिलेख (खतौनी / जमाबंदी)",
+        "isMandatory": true,
+        "helpTip": "Updated copy of land revenue document showing your name",
+        "helpTipHi": "आपका नाम दर्शाने वाली भू-राजस्व दस्तावेज की अद्यतन प्रति"
+      },
+      {
+        "name": "Bank Account Passbook (Aadhaar Seeded)",
+        "nameHi": "बैंक खाता पासबुक (आधार लिंक्ड)",
+        "isMandatory": true,
+        "helpTip": "Ensure DBT (Direct Benefit Transfer) is active on this account",
+        "helpTipHi": "सुनिश्चित करें कि इस खाते पर डीबीटी सक्रिय है"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Visit official PM-KISAN portal (pmkisan.gov.in) and click on 'New Farmer Registration'.",
+        "instructionHi": "आधिकारिक पीएम-किसान पोर्टल (pmkisan.gov.in) पर जाएं और 'न्यू फार्मर रजिस्ट्रेशन' पर क्लिक करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Enter Aadhaar number, state, and captcha, then complete mobile OTP verification.",
+        "instructionHi": "आधार नंबर, राज्य और कैप्चा दर्ज करें, फिर मोबाइल ओटीपी सत्यापन पूरा करें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Upload land record details (Khasra/Khatauni) and submit for local patwari/revenue verification.",
+        "instructionHi": "भूमि रिकॉर्ड विवरण (खसरा/खतौनी) अपलोड करें और स्थानीय पटवारी/राजस्व सत्यापन के लिए जमा करें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Ministry of Agriculture & Farmers Welfare",
+      "officialPortalUrl": "https://pmkisan.gov.in",
+      "lastVerifiedDate": "2025-02-15",
+      "schemeGuidelinesUrl": "https://pmkisan.gov.in/Documents/RevisedGuidelines.pdf",
+      "helplineNumber": "155261 / 011-24300606"
+    }
+  },
+  {
+    "id": "pm-fasal-bima",
+    "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "nameHi": "प्रधानमंत्री फसल बीमा योजना (पीएमएफबीवाई)",
+    "category": "agriculture",
+    "targetPersonas": ["farmer"],
+    "summary": "Comprehensive crop insurance scheme providing financial support to farmers suffering crop loss or damage arising out of unforeseen weather events and natural calamities.",
+    "summaryHi": "अप्रत्याशित मौसमी घटनाओं और प्राकृतिक आपदाओं से फसल नुकसान या क्षति झेलने वाले किसानों को वित्तीय सहायता प्रदान करने वाली व्यापक फसल बीमा योजना।",
+    "benefits": [
+      "Extremely low premium: Only 2% for Kharif crops, 1.5% for Rabi crops, 5% for commercial/horticultural crops",
+      "Full sum insured payout for localized calamities, prevented sowing, and post-harvest losses",
+      "Rapid claim settlement directly into beneficiary bank accounts using satellite/remote sensing data"
+    ],
+    "benefitsHi": [
+      "अत्यंत कम प्रीमियम: खरीफ फसलों के लिए केवल 2%, रबी के लिए 1.5%, वाणिज्यिक/बागवानी के लिए 5%",
+      "स्थानीयकृत आपदाओं, बुवाई में रुकावट और कटाई उपरांत नुकसान के लिए पूर्ण बीमा राशि का भुगतान",
+      "उपग्रह/रिमोट सेंसिंग डेटा का उपयोग करके सीधे लाभार्थी बैंक खातों में त्वरित दावा निपटान"
+    ],
+    "hardRules": {
+      "minAge": 18,
+      "maxAge": 90,
+      "allowedOccupations": ["farmer"],
+      "maxAnnualIncome": 500000,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Must be growing notified crops in notified areas as designated by the state government",
+      "Both loanee (KCC holders) and non-loanee farmers are eligible",
+      "Cut-off dates for crop insurance enrollment must be adhered to before each sowing season"
+    ],
+    "specificConditionsHi": [
+      "राज्य सरकार द्वारा अधिसूचित क्षेत्रों में अधिसूचित फसलें उगानी चाहिए",
+      "ऋणी (केसीसी धारक) और गैर-ऋणी दोनों किसान पात्र हैं",
+      "प्रत्येक बुवाई सीजन से पहले फसल बीमा नामांकन की कट-ऑफ तारीखों का पालन अनिवार्य है"
+    ],
+    "documents": [
+      {
+        "name": "Aadhaar Card",
+        "nameHi": "आधार कार्ड",
+        "isMandatory": true,
+        "helpTip": "Identity verification document",
+        "helpTipHi": "पहचान सत्यापन दस्तावेज"
+      },
+      {
+        "name": "Land Possession Certificate / Sowing Certificate",
+        "nameHi": "भूमि कब्जा प्रमाण पत्र / बुवाई प्रमाण पत्र",
+        "isMandatory": true,
+        "helpTip": "Issued by Village Administrative Officer / Patwari confirming the crop sown",
+        "helpTipHi": "बोई गई फसल की पुष्टि करने वाला पटवारी द्वारा जारी प्रमाण पत्र"
+      },
+      {
+        "name": "Bank Passbook Copy",
+        "nameHi": "बैंक पासबुक प्रति",
+        "isMandatory": true,
+        "helpTip": "Bank account where claim settlement amount will be credited",
+        "helpTipHi": "वह बैंक खाता जिसमें दावा निपटान राशि जमा की जाएगी"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Visit official PMFBY portal (pmfby.gov.in) or nearest Common Service Centre (CSC) / Bank branch.",
+        "instructionHi": "आधिकारिक पीएमएफबीवाई पोर्टल (pmfby.gov.in) या निकटतम सीएससी केंद्र / बैंक शाखा पर जाएं।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Select season (Kharif/Rabi), state, crop name, and cultivated area in acres.",
+        "instructionHi": "सीजन (खरीफ/रबी), राज्य, फसल का नाम और एकड़ में खेती का रकबा चुनें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Pay the nominal premium online or at CSC and collect the insurance acknowledgement receipt.",
+        "instructionHi": "ऑनलाइन या सीएससी पर नाममात्र प्रीमियम का भुगतान करें और बीमा पावती रसीद प्राप्त करें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Ministry of Agriculture & Farmers Welfare",
+      "officialPortalUrl": "https://pmfby.gov.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "1800-180-1551"
+    }
+  },
+  {
+    "id": "kisan-credit-card",
+    "name": "Kisan Credit Card (KCC) Scheme",
+    "nameHi": "किसान क्रेडिट कार्ड (केसीसी) योजना",
+    "category": "agriculture",
+    "targetPersonas": ["farmer"],
+    "summary": "Affordable institutional credit for farmers with interest subvention up to 3% for timely repayment, ensuring working capital for seeds, fertilizers, and equipment.",
+    "summaryHi": "किसानों के लिए किफायती संस्थागत ऋण, समय पर पुनर्भुगतान पर 3% तक ब्याज सबवेंशन के साथ, बीज, खाद और उपकरणों के लिए कार्यशील पूंजी सुनिश्चित करना।",
+    "benefits": [
+      "Credit limit up to ₹3,00,000 at an effective subsidized interest rate of just 4% p.a. upon prompt repayment",
+      "No collateral required for loans up to ₹1,60,000",
+      "Flexible revolving credit card valid for 5 years with built-in crop insurance coverage"
+    ],
+    "benefitsHi": [
+      "समय पर पुनर्भुगतान पर केवल 4% वार्षिक रियायती ब्याज दर पर ₹3,00,000 तक की ऋण सीमा",
+      "₹1,60,000 तक के ऋण के लिए किसी बंधक/संपार्श्विक की आवश्यकता नहीं",
+      "फसल बीमा कवरेज के साथ 5 वर्ष के लिए वैध लचीला रिवॉल्विंग क्रेडिट कार्ड"
+    ],
+    "hardRules": {
+      "minAge": 18,
+      "maxAge": 75,
+      "allowedOccupations": ["farmer"],
+      "maxAnnualIncome": 400000,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Must be an individual farmer, tenant farmer, sharecropper, or self-help group member",
+      "Applicant should have a good credit repayment track record without willful defaults"
+    ],
+    "specificConditionsHi": [
+      "व्यक्तिगत किसान, काश्तकार किसान, बटाईदार या स्वयं सहायता समूह सदस्य होना चाहिए",
+      "आवेदक का पिछला ऋण पुनर्भुगतान रिकॉर्ड अच्छा होना चाहिए"
+    ],
+    "documents": [
+      {
+        "name": "Aadhaar Card and PAN Card / Voter ID",
+        "nameHi": "आधार कार्ड और पैन कार्ड / मतदाता पहचान पत्र",
+        "isMandatory": true,
+        "helpTip": "Identity and address verification",
+        "helpTipHi": "पहचान और पते का सत्यापन"
+      },
+      {
+        "name": "Land Ownership Document / Tenant Agreement",
+        "nameHi": "भूमि स्वामित्व दस्तावेज / काश्तकारी अनुबंध",
+        "isMandatory": true,
+        "helpTip": "Document verifying land area and cropping pattern",
+        "helpTipHi": "भूमि क्षेत्र और फसल पैटर्न को सत्यापित करने वाला दस्तावेज"
+      },
+      {
+        "name": "Passport Size Photographs",
+        "nameHi": "पासपोर्ट साइज फोटो",
+        "isMandatory": true,
+        "helpTip": "2 recent passport size photographs",
+        "helpTipHi": "2 हालिया पासपोर्ट साइज तस्वीरें"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Download one-page KCC application form from myscheme.gov.in or obtain from local bank branch.",
+        "instructionHi": "myscheme.gov.in से एक पेज का केसीसी आवेदन फॉर्म डाउनलोड करें या स्थानीय बैंक शाखा से प्राप्त करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fill basic details, land holding size, and submit along with land record copy to nearest nationalized / cooperative bank.",
+        "instructionHi": "बुनियादी विवरण, जोत का आकार भरें और निकटतम बैंक में भूमि रिकॉर्ड के साथ जमा करें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Bank issues KCC card and disburses sanctioned credit limit within 14 business days.",
+        "instructionHi": "बैंक 14 कार्य दिवसों के भीतर केसीसी कार्ड जारी करता है और ऋण सीमा स्वीकृत करता है।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Department of Agriculture and Farmers Welfare & Reserve Bank of India",
+      "officialPortalUrl": "https://myscheme.gov.in/schemes/kcc",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "1800-115-526"
+    }
+  },
+  {
+    "id": "post-matric-scholarship",
+    "name": "Post-Matric Scholarship Scheme for SC / ST / OBC Students",
+    "nameHi": "अनुसूचित जाति/जनजाति/अन्य पिछड़ा वर्ग हेतु पोस्ट-मैट्रिक छात्रवृत्ति योजना",
+    "category": "education",
+    "targetPersonas": ["student"],
+    "summary": "Centrally sponsored scholarship scheme providing 100% compulsory non-refundable fees reimbursement and monthly maintenance allowances to students pursuing post-matriculation / tertiary education.",
+    "summaryHi": "मैट्रिकोत्तर / उच्च शिक्षा प्राप्त कर रहे छात्रों को 100% अनिवार्य गैर-वापसी योग्य शिक्षण शुल्क प्रतिपूर्ति और मासिक रखरखाव भत्ता प्रदान करने वाली केंद्र प्रायोजित छात्रवृत्ति योजना।",
+    "benefits": [
+      "Full reimbursement of compulsory non-refundable college/university tuition fees",
+      "Monthly maintenance allowance: Up to ₹1,200/month for hostellers and ₹550/month for day scholars",
+      "Additional allowances for study tours, thesis typing, and book grants for professional courses"
+    ],
+    "benefitsHi": [
+      "कॉलेज/विश्वविद्यालय के अनिवार्य गैर-वापसी योग्य शिक्षण शुल्क की पूर्ण प्रतिपूर्ति",
+      "मासिक रखरखाव भत्ता: छात्रावास में रहने वालों के लिए ₹1,200/माह और डे स्कॉलर के लिए ₹550/माह",
+      "व्यावसायिक पाठ्यक्रमों के लिए अध्ययन भ्रमण, थीसिस टाइपिंग और पुस्तक अनुदान हेतु अतिरिक्त भत्ते"
+    ],
+    "hardRules": {
+      "minAge": 15,
+      "maxAge": 35,
+      "allowedCategories": ["obc", "sc", "st", "minority"],
+      "maxAnnualIncome": 250000,
+      "requiresStudent": true,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Must be currently enrolled in a recognized post-secondary institution (Class 11, 12, ITI, Diploma, Degree, PG, Doctorate)",
+      "Annual family income from all sources must not exceed ₹2.50 Lakh per annum",
+      "Must not be receiving another government scholarship simultaneously for the same course"
+    ],
+    "specificConditionsHi": [
+      "मान्यता प्राप्त उच्च शिक्षण संस्थान (11वीं, 12वीं, आईटीआई, डिप्लोमा, डिग्री, पीजी, डॉक्टरेट) में नामांकित होना चाहिए",
+      "सभी स्रोतों से वार्षिक पारिवारिक आय ₹2.50 लाख से अधिक नहीं होनी चाहिए",
+      "उसी पाठ्यक्रम के लिए एक साथ कोई अन्य सरकारी छात्रवृत्ति प्राप्त नहीं कर रहे हों"
+    ],
+    "documents": [
+      {
+        "name": "Caste / Category Certificate",
+        "nameHi": "जाति / श्रेणी प्रमाण पत्र",
+        "isMandatory": true,
+        "helpTip": "Issued by authorized Tehsildar / Sub-Divisional Magistrate (SDM)",
+        "helpTipHi": "सक्षम तहसीलदार / उप-विभागीय मजिस्ट्रेट (एसडीएम) द्वारा जारी"
+      },
+      {
+        "name": "Income Certificate",
+        "nameHi": "आय प्रमाण पत्र",
+        "isMandatory": true,
+        "helpTip": "Current financial year income certificate showing family income under ₹2.5L",
+        "helpTipHi": "चालू वित्तीय वर्ष का आय प्रमाण पत्र जिसमें पारिवारिक आय ₹2.5 लाख से कम दर्शाई गई हो"
+      },
+      {
+        "name": "Fee Receipt & Admission Proof",
+        "nameHi": "फीस रसीद और प्रवेश प्रमाण",
+        "isMandatory": true,
+        "helpTip": "Official receipt of college tuition fee paid",
+        "helpTipHi": "कॉलेज शिक्षण शुल्क भुगतान की आधिकारिक रसीद"
+      },
+      {
+        "name": "Previous Qualifying Exam Marksheet",
+        "nameHi": "पिछली उत्तीर्ण परीक्षा की अंकतालिका",
+        "isMandatory": true,
+        "helpTip": "Class 10th / 12th / previous semester marksheet",
+        "helpTipHi": "10वीं / 12वीं / पिछले सेमेस्टर की अंकतालिका"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Register on the National Scholarship Portal (scholarships.gov.in) with Aadhaar Number and mobile OTP.",
+        "instructionHi": "आधार नंबर और मोबाइल ओटीपी के साथ राष्ट्रीय छात्रवृत्ति पोर्टल (scholarships.gov.in) पर पंजीकरण करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fill academic and demographic details, upload caste and income certificates, and choose your institution.",
+        "instructionHi": "शैक्षणिक और जनसांख्यिकीय विवरण भरें, जाति और आय प्रमाण पत्र अपलोड करें और अपना संस्थान चुनें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Submit online and hand over hardcopy printout to your College Nodal Officer for institutional verification.",
+        "instructionHi": "ऑनलाइन जमा करें और संस्थागत सत्यापन के लिए अपने कॉलेज नोडल अधिकारी को हार्डकॉपी प्रिंटआउट सौंपें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Ministry of Social Justice and Empowerment / Ministry of Tribal Affairs",
+      "officialPortalUrl": "https://scholarships.gov.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "0120-6619540"
+    }
+  },
+  {
+    "id": "pragati-scholarship-girls",
+    "name": "AICTE Pragati Scholarship Scheme for Girl Students",
+    "nameHi": "एआईसीटीई प्रगति बालिका छात्रवृत्ति योजना",
+    "category": "education",
+    "targetPersonas": ["student"],
+    "summary": "Special initiative by the Ministry of Education to support technical education advancement for girl students admitted to AICTE approved Degree/Diploma institutions.",
+    "summaryHi": "एआईसीटीई स्वीकृत डिग्री/डिप्लोमा संस्थानों में प्रवेशित छात्राओं के लिए तकनीकी शिक्षा को बढ़ावा देने हेतु शिक्षा मंत्रालय की विशेष पहल।",
+    "benefits": [
+      "₹50,000 per annum scholarship grant for every year of technical study (up to 4 years for Degree, 3 years for Diploma)",
+      "Can be utilized for college fee payment, laptop/computer purchase, books, and competitive exam fees",
+      "Direct Benefit Transfer into girl student's Aadhaar-linked savings account"
+    ],
+    "benefitsHi": [
+      "तकनीकी अध्ययन के प्रत्येक वर्ष के लिए ₹50,000 प्रति वर्ष छात्रवृत्ति अनुदान (डिग्री के लिए 4 वर्ष तक, डिप्लोमा के लिए 3 वर्ष तक)",
+      "कॉलेज फीस, लैपटॉप/कंप्यूटर खरीद, किताबें और प्रतियोगी परीक्षा शुल्क के लिए उपयोग किया जा सकता है",
+      "छात्रा के आधार-लिंक्ड बैंक खाते में प्रत्यक्ष लाभ अंतरण (डीबीटी)"
+    ],
+    "hardRules": {
+      "minAge": 16,
+      "maxAge": 28,
+      "allowedGenders": ["female"],
+      "maxAnnualIncome": 800000,
+      "requiresStudent": true,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Only female students admitted to 1st year (or 2nd year via lateral entry) of AICTE approved technical Degree or Diploma courses",
+      "Maximum 2 girl children per family eligible",
+      "Annual family income must not exceed ₹8.0 Lakh per annum"
+    ],
+    "specificConditionsHi": [
+      "केवल एआईसीटीई मान्यता प्राप्त डिग्री या डिप्लोमा पाठ्यक्रमों के प्रथम वर्ष (या लेटरल एंट्री के माध्यम से द्वितीय वर्ष) में प्रवेशित छात्राएं",
+      "प्रति परिवार अधिकतम 2 बालिकाएं पात्र हैं",
+      "पारिवारिक वार्षिक आय ₹8.0 लाख प्रति वर्ष से अधिक नहीं होनी चाहिए"
+    ],
+    "documents": [
+      {
+        "name": "Admission Allotment Letter",
+        "nameHi": "प्रवेश आवंटन पत्र",
+        "isMandatory": true,
+        "helpTip": "Centralized admission allotment letter issued by state/central authority",
+        "helpTipHi": "राज्य/केंद्रीय प्राधिकरण द्वारा जारी केंद्रीकृत प्रवेश आवंटन पत्र"
+      },
+      {
+        "name": "Income Certificate",
+        "nameHi": "आय प्रमाण पत्र",
+        "isMandatory": true,
+        "helpTip": "Valid income certificate showing family income under ₹8 Lakh",
+        "helpTipHi": "पारिवारिक आय ₹8 लाख से कम दर्शाने वाला वैध आय प्रमाण पत्र"
+      },
+      {
+        "name": "Family Sibling Declaration",
+        "nameHi": "पारिवारिक सहोदर घोषणा पत्र",
+        "isMandatory": true,
+        "helpTip": "Declaration signed by parents stating girl eligibility under family quota",
+        "helpTipHi": "माता-पिता द्वारा हस्ताक्षरित घोषणा पत्र"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Apply online on the National Scholarship Portal (NSP) during open call window.",
+        "instructionHi": "आवेदन विंडो खुलने पर राष्ट्रीय छात्रवृत्ति पोर्टल (NSP) पर ऑनलाइन आवेदन करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Select AICTE Pragati Scheme, attach fee structure, admission allotment slip, and income certificate.",
+        "instructionHi": "एआईसीटीई प्रगति योजना चुनें, फीस संरचना, प्रवेश पर्ची और आय प्रमाण पत्र संलग्न करें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Verification completed by institute Level-1 and State Nodal Officer Level-2.",
+        "instructionHi": "संस्थान स्तर-1 और राज्य नोडल अधिकारी स्तर-2 द्वारा सत्यापन पूरा किया जाता है।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "All India Council for Technical Education (AICTE) / Ministry of Education",
+      "officialPortalUrl": "https://www.aicte-india.org/schemes/students-development-schemes/PG-Scholarship-Scheme",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "011-29581333"
+    }
+  },
+  {
+    "id": "pm-vidyalaxmi",
+    "name": "PM Vidyalaxmi Scheme (Higher Education Financial Support)",
+    "nameHi": "पीएम विद्यालक्ष्मी योजना (उच्च शिक्षा वित्तीय सहायता)",
+    "category": "education",
+    "targetPersonas": ["student"],
+    "summary": "Unified central portal providing collateral-free, guarantor-free education loans with 3% interest subvention for students admitted to Top 860 NIRF-ranked Higher Education Institutions.",
+    "summaryHi": "शीर्ष 860 एनआईआरएफ-रैंक वाले उच्च शिक्षण संस्थानों में प्रवेशित छात्रों के लिए 3% ब्याज सबवेंशन के साथ बिना किसी गारंटी के शिक्षा ऋण प्रदान करने वाला एकीकृत केंद्रीय पोर्टल।",
+    "benefits": [
+      "100% collateral-free and guarantor-free education loans up to ₹7.5 Lakh",
+      "3% interest subvention during moratorium period for students with family income up to ₹8 Lakh",
+      "Full interest subsidy for students with family income up to ₹4.5 Lakh",
+      "Direct digital loan application to 40+ scheduled banks via a single common window"
+    ],
+    "benefitsHi": [
+      "₹7.5 लाख तक 100% बिना किसी संपार्श्विक और बिना किसी गारंटर के शिक्षा ऋण",
+      "₹8 लाख तक पारिवारिक आय वाले छात्रों के लिए अधिस्थगन अवधि के दौरान 3% ब्याज सबवेंशन",
+      "₹4.5 लाख तक पारिवारिक आय वाले छात्रों के लिए पूर्ण ब्याज सब्सिडी",
+      "एक ही विंडो के माध्यम से 40+ बैंकों में सीधा डिजिटल ऋण आवेदन"
+    ],
+    "hardRules": {
+      "minAge": 17,
+      "maxAge": 32,
+      "maxAnnualIncome": 800000,
+      "requiresStudent": true,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Must have secured admission to a recognized degree/diploma program in designated Top NIRF/National institutions",
+      "Student must hold a valid PAN Card and Aadhaar Card"
+    ],
+    "specificConditionsHi": [
+      "नामित शीर्ष एनआईआरएफ/राष्ट्रीय संस्थानों में मान्यता प्राप्त डिग्री/डिप्लोमा कार्यक्रम में प्रवेश प्राप्त होना चाहिए",
+      "छात्र के पास वैध पैन कार्ड और आधार कार्ड होना चाहिए"
+    ],
+    "documents": [
+      {
+        "name": "College Admission Letter & Course Fee Schedule",
+        "nameHi": "कॉलेज प्रवेश पत्र और पाठ्यक्रम शुल्क विवरण",
+        "isMandatory": true,
+        "helpTip": "Official letter confirming admission with breakup of institutional fee",
+        "helpTipHi": "संस्थागत शुल्क के विवरण के साथ प्रवेश की पुष्टि करने वाला आधिकारिक पत्र"
+      },
+      {
+        "name": "Aadhaar Card and Student PAN Card",
+        "nameHi": "आधार कार्ड और छात्र पैन कार्ड",
+        "isMandatory": true,
+        "helpTip": "Mandatory for banking credit registration",
+        "helpTipHi": "बैंकिंग क्रेडिट पंजीकरण के लिए अनिवार्य"
+      },
+      {
+        "name": "Family Income Proof",
+        "nameHi": "पारिवारिक आय प्रमाण",
+        "isMandatory": true,
+        "helpTip": "ITR / Salary Slip / Revenue Income Certificate for interest subvention",
+        "helpTipHi": "ब्याज सबवेंशन के लिए आईटीआर / वेतन पर्ची / राजस्व आय प्रमाण पत्र"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Register on the PM Vidyalaxmi portal (pmvidyalaxmi.gov.in) with student email and Aadhaar.",
+        "instructionHi": "छात्र ईमेल और आधार के साथ पीएम विद्यालक्ष्मी पोर्टल (pmvidyalaxmi.gov.in) पर पंजीकरण करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Fill the Common Educational Loan Application Form (CELAF) and upload admission offer.",
+        "instructionHi": "कॉमन एजुकेशनल लोन एप्लीकेशन फॉर्म (CELAF) भरें और प्रवेश प्रस्ताव अपलोड करें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Apply to multiple participating banks of your choice and track digital loan sanction.",
+        "instructionHi": "अपनी पसंद के कई बैंकों में आवेदन करें और डिजिटल ऋण स्वीकृति को ट्रैक करें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Ministry of Education / Department of Higher Education",
+      "officialPortalUrl": "https://www.pmvidyalaxmi.gov.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "1800-180-1111"
+    }
+  },
+  {
+    "id": "pm-svanidhi",
+    "name": "PM SVANidhi (Street Vendor's AtmaNirbhar Nidhi)",
+    "nameHi": "पीएम स्वनिधि (स्ट्रीट वेंडर्स आत्मनिर्भर निधि)",
+    "category": "livelihood",
+    "targetPersonas": ["informal_worker"],
+    "summary": "Special micro-credit facility providing affordable, collateral-free working capital loans of ₹10,000 to ₹50,000 to urban street vendors, hawkers, and informal micro-entrepreneurs.",
+    "summaryHi": "शहरी स्ट्रीट वेंडरों, फेरीवालों और अनौपचारिक सूक्ष्म उद्यमियों को ₹10,000 से ₹50,000 तक किफायती, संपार्श्विक-मुक्त कार्यशील पूंजी ऋण प्रदान करने वाली विशेष माइक्रो-क्रेडिट सुविधा।",
+    "benefits": [
+      "1st Tranche loan of ₹10,000 (repayable in 1 year); 2nd Tranche of ₹20,000; 3rd Tranche of ₹50,000 on prompt repayment",
+      "7% interest subsidy credited directly to bank account on timely monthly repayments",
+      "Cashback up to ₹1,200 per year on conducting digital transactions (QR code UPI payments)",
+      "Zero collateral or guarantor required"
+    ],
+    "benefitsHi": [
+      "प्रथम किस्त में ₹10,000 का ऋण (1 वर्ष में देय); समय पर चुकाने पर दूसरी किस्त ₹20,000; तीसरी किस्त ₹50,000",
+      "मासिक समय पर पुनर्भुगतान पर बैंक खाते में 7% ब्याज सब्सिडी सीधे क्रेडिट",
+      "डिजिटल लेनदेन (क्यूआर कोड यूपीआई भुगतान) करने पर ₹1,200 प्रति वर्ष तक कैशबैक",
+      "शून्य संपार्श्विक या गारंटर की आवश्यकता"
+    ],
+    "hardRules": {
+      "minAge": 18,
+      "maxAge": 70,
+      "allowedOccupations": ["street_vendor", "daily_wage_worker", "self_employed"],
+      "maxAnnualIncome": 300000,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Must be engaged in vending in urban, semi-urban, or peri-urban areas",
+      "Must possess a Certificate of Vending (CoV) / Identity Card issued by Urban Local Body (ULB) or Letter of Recommendation (LoR)"
+    ],
+    "specificConditionsHi": [
+      "शहरी, अर्ध-शहरी या उपनगरीय क्षेत्रों में वेंडिंग में संलग्न होना चाहिए",
+      "शहरी स्थानीय निकाय (यूएलबी) द्वारा जारी वेंडिंग प्रमाणपत्र (सीओवी) / पहचान पत्र या अनुशंसा पत्र (एलओआर) होना चाहिए"
+    ],
+    "documents": [
+      {
+        "name": "Aadhaar Card linked to Mobile",
+        "nameHi": "मोबाइल से लिंक आधार कार्ड",
+        "isMandatory": true,
+        "helpTip": "Used for instant OTP authentication on the portal",
+        "helpTipHi": "पोर्टल पर त्वरित ओटीपी प्रमाणीकरण के लिए प्रयुक्त"
+      },
+      {
+        "name": "Vending Certificate (CoV) or Letter of Recommendation (LoR)",
+        "nameHi": "वेंडिंग प्रमाणपत्र (CoV) या अनुशंसा पत्र (LoR)",
+        "isMandatory": true,
+        "helpTip": "Available from local Municipality / Municipal Corporation ward office",
+        "helpTipHi": "स्थानीय नगरपालिका / नगर निगम वार्ड कार्यालय से उपलब्ध"
+      },
+      {
+        "name": "Bank Passbook with UPI QR setup",
+        "nameHi": "बैंक पासबुक (यूपीआई क्यूआर सेटअप के साथ)",
+        "isMandatory": true,
+        "helpTip": "Account for receiving loan disbursement and cashback incentives",
+        "helpTipHi": "ऋण वितरण और कैशबैक प्रोत्साहन प्राप्त करने के लिए खाता"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Visit official PM SVANidhi portal (pmsvanidhi.mohua.gov.in) or download the PM SVANidhi Mobile App.",
+        "instructionHi": "आधिकारिक पीएम स्वनिधि पोर्टल (pmsvanidhi.mohua.gov.in) पर जाएं या मोबाइल ऐप डाउनलोड करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Enter mobile number, authenticate with Aadhaar OTP, and select your Urban Local Body (ULB).",
+        "instructionHi": "मोबाइल नंबर दर्ज करें, आधार ओटीपी से प्रमाणित करें और अपना नगर निकाय चुनें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Select preferred Lending Institution / Bank and submit application for instant processing.",
+        "instructionHi": "पसंदीदा ऋणदाता संस्थान / बैंक चुनें और त्वरित प्रसंस्करण के लिए आवेदन जमा करें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Ministry of Housing and Urban Affairs (MoHUA)",
+      "officialPortalUrl": "https://pmsvanidhi.mohua.gov.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "1800-111-979"
+    }
+  },
+  {
+    "id": "ayushman-bharat-pmjay",
+    "name": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (AB-PMJAY)",
+    "nameHi": "आयुष्मान भारत - प्रधानमंत्री जन आरोग्य योजना (एबी-पीएमजेएवाई)",
+    "category": "healthcare",
+    "targetPersonas": ["informal_worker", "farmer", "senior_citizen"],
+    "summary": "World's largest government-funded healthcare assurance scheme providing comprehensive health coverage of ₹5 Lakh per family per year for secondary and tertiary inpatient hospital care.",
+    "summaryHi": "माध्यमिक और तृतीयक इनपेशेंट अस्पताल देखभाल के लिए प्रति परिवार प्रति वर्ष ₹5 लाख का व्यापक स्वास्थ्य कवरेज प्रदान करने वाली विश्व की सबसे बड़ी सरकारी स्वास्थ्य योजना।",
+    "benefits": [
+      "Cashless and paperless access to healthcare services up to ₹5,00,000 per family per year",
+      "Covers 1,949 medical and surgical procedures across 28,000+ empaneled public & private hospitals nationwide",
+      "Covers pre-hospitalization (up to 3 days) and post-hospitalization (up to 15 days) diagnostic/medicine expenses",
+      "No family size or age limit restriction; all senior citizens aged 70+ now eligible for dedicated ₹5L top-up cover"
+    ],
+    "benefitsHi": [
+      "प्रति परिवार प्रति वर्ष ₹5,00,000 तक स्वास्थ्य सेवाओं तक कैशलेस और पेपरलेस पहुंच",
+      "देशभर में 28,000+ पैनलबद्ध सरकारी और निजी अस्पतालों में 1,949 चिकित्सा प्रक्रियाओं को कवर करता है",
+      "अस्पताल में भर्ती से पहले (3 दिन तक) और भर्ती के बाद (15 दिन तक) की जांच/दवाइयों का खर्च शामिल",
+      "परिवार के आकार या आयु की कोई सीमा नहीं; 70+ आयु के सभी वरिष्ठ नागरिक ₹5 लाख के अतिरिक्त टॉप-अप कवर हेतु पात्र"
+    ],
+    "hardRules": {
+      "minAge": 0,
+      "maxAge": 120,
+      "maxAnnualIncome": 300000,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Eligible based on SECC 2011 deprivation criteria, National Food Security Act (NFSA) / Ration Card data, or Age 70+ Senior Citizen enrollment",
+      "Must have a valid Ayushman Card generated via Aadhaar eKYC"
+    ],
+    "specificConditionsHi": [
+      "एसईसीसी 2011 अभाव मानदंडों, राष्ट्रीय खाद्य सुरक्षा अधिनियम (राशन कार्ड) डेटा, या 70+ आयु वर्ग के वरिष्ठ नागरिक नामांकन के आधार पर पात्र",
+      "आधार ई-केवाईसी के माध्यम से जनरेट किया गया वैध आयुष्मान कार्ड होना आवश्यक है"
+    ],
+    "documents": [
+      {
+        "name": "Aadhaar Card",
+        "nameHi": "आधार कार्ड",
+        "isMandatory": true,
+        "helpTip": "Used for instant biometric / OTP e-KYC",
+        "helpTipHi": "त्वरित बायोमेट्रिक / ओटीपी ई-केवाईसी के लिए प्रयुक्त"
+      },
+      {
+        "name": "Ration Card (NFSA / BPL / Antyodaya)",
+        "nameHi": "राशन कार्ड (खाद्य सुरक्षा / बीपीएल / अंत्योदय)",
+        "isMandatory": true,
+        "helpTip": "Household family mapping document",
+        "helpTipHi": "पारिवारिक मैपिंग दस्तावेज"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Visit beneficiary portal (beneficiary.nha.gov.in) or download Ayushman App.",
+        "instructionHi": "लाभार्थी पोर्टल (beneficiary.nha.gov.in) पर जाएं या आयुष्मान ऐप डाउनलोड करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Search your family eligibility using State, Scheme, District, and Aadhaar / Ration Card Number.",
+        "instructionHi": "राज्य, योजना, जिला और आधार / राशन कार्ड नंबर का उपयोग करके पारिवारिक पात्रता खोजें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Complete instant Aadhaar face/OTP eKYC and download PVC Ayushman Card instantly.",
+        "instructionHi": "त्वरित आधार फेस/ओटीपी ई-केवाईसी पूरा करें और तुरंत पीवीसी आयुष्मान कार्ड डाउनलोड करें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "National Health Authority (NHA) / Ministry of Health and Family Welfare",
+      "officialPortalUrl": "https://beneficiary.nha.gov.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "14555 / 1800-111-565"
+    }
+  },
+  {
+    "id": "pm-sym-pension",
+    "name": "Pradhan Mantri Shram Yogi Maan-dhan (PM-SYM)",
+    "nameHi": "प्रधानमंत्री श्रम योगी मान-धन (पीएम-एसवाईएम)",
+    "category": "social_security",
+    "targetPersonas": ["informal_worker"],
+    "summary": "Voluntary and contributory pension scheme for unorganized workers, home-based workers, domestic workers, and daily-wagers providing assured monthly pension of ₹3,000 after attaining age 60.",
+    "summaryHi": "असंगठित श्रमिकों, घरेलू कामगारों और दिहाड़ी मजदूरों के लिए स्वैच्छिक और अंशदायी पेंशन योजना, जो 60 वर्ष की आयु के बाद ₹3,000 की सुनिश्चित मासिक पेंशन प्रदान करती है।",
+    "benefits": [
+      "Guaranteed monthly pension of ₹3,000 upon reaching 60 years of age",
+      "50% equal matching contribution by the Central Government into the pension fund",
+      "Family pension: In case of death of the subscriber, the spouse receives 50% monthly pension (₹1,500/month)"
+    ],
+    "benefitsHi": [
+      "60 वर्ष की आयु पूरी होने पर ₹3,000 की सुनिश्चित मासिक पेंशन",
+      "पेंशन फंड में केंद्र सरकार द्वारा 50% समान मिलान अंशदान",
+      "पारिवारिक पेंशन: अभिदाता की मृत्यु की स्थिति में, जीवनसाथी को 50% मासिक पेंशन (₹1,500/माह)"
+    ],
+    "hardRules": {
+      "minAge": 18,
+      "maxAge": 40,
+      "allowedOccupations": ["daily_wage_worker", "street_vendor", "unemployed", "homemaker", "self_employed"],
+      "maxAnnualIncome": 180000,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Must be an unorganized worker with monthly income of ₹15,000 or less",
+      "Must NOT be covered under EPFO, ESIC, or NPS (government-funded)",
+      "Must not be an income tax payer"
+    ],
+    "specificConditionsHi": [
+      "₹15,000 या उससे कम मासिक आय वाला असंगठित श्रमिक होना चाहिए",
+      "ईपीएफओ, ईएसआईसी या एनपीएस (सरकारी) के तहत कवर नहीं होना चाहिए",
+      "आयकर दाता नहीं होना चाहिए"
+    ],
+    "documents": [
+      {
+        "name": "Aadhaar Card",
+        "nameHi": "आधार कार्ड",
+        "isMandatory": true,
+        "helpTip": "Identity document",
+        "helpTipHi": "पहचान दस्तावेज"
+      },
+      {
+        "name": "Savings Bank Account Passbook / Cheque (with IFSC)",
+        "nameHi": "बचत बैंक खाता पासबुक / चेक (आईएफएससी के साथ)",
+        "isMandatory": true,
+        "helpTip": "For setting up auto-debit of monthly micro-contribution (₹55 to ₹200 depending on entry age)",
+        "helpTipHi": "मासिक अंशदान (प्रवेश आयु के आधार पर ₹55 से ₹200) के ऑटो-डेबिट हेतु"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Visit nearest Common Services Centre (CSC) or maandhan.in with Aadhaar and bank details.",
+        "instructionHi": "आधार और बैंक विवरण के साथ निकटतम सीएससी केंद्र या maandhan.in पर जाएं।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Calculate monthly contribution, authenticate biometric e-KYC, and sign auto-debit mandate.",
+        "instructionHi": "मासिक अंशदान की गणना करें, बायोमेट्रिक ई-केवाईसी प्रमाणित करें और ऑटो-डेबिट मैंडेट पर हस्ताक्षर करें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Instantly receive your Shram Yogi Pension Card with unique Pension Number.",
+        "instructionHi": "विशिष्ट पेंशन नंबर वाला श्रम योगी पेंशन कार्ड तुरंत प्राप्त करें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Ministry of Labour & Employment",
+      "officialPortalUrl": "https://maandhan.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "1800-267-6888"
+    }
+  },
+  {
+    "id": "ignoaps-old-age-pension",
+    "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+    "nameHi": "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन योजना",
+    "category": "social_security",
+    "targetPersonas": ["senior_citizen"],
+    "summary": "Non-contributory direct financial pension provided by the central and state governments to senior citizens aged 60+ belonging to Below Poverty Line (BPL) households.",
+    "summaryHi": "गरीबी रेखा से नीचे (बीपीएल) परिवारों से संबंधित 60 वर्ष से अधिक आयु के वरिष्ठ नागरिकों को केंद्र और राज्य सरकारों द्वारा प्रदान की जाने वाली प्रत्यक्ष वित्तीय पेंशन।",
+    "benefits": [
+      "Monthly financial pension directly deposited into bank/post office account (₹200 to ₹500 Central component + ₹500 to ₹1,500 State top-up)",
+      "Enhanced monthly rate for super-senior citizens aged 80 and above",
+      "Direct DBT transfer ensuring zero leakage"
+    ],
+    "benefitsHi": [
+      "बैंक/डाकघर खाते में सीधे मासिक वित्तीय पेंशन (केंद्रीय अंश + राज्य टॉप-अप)",
+      "80 वर्ष और उससे अधिक आयु के अति-वरिष्ठ नागरिकों के लिए बढ़ी हुई मासिक पेंशन",
+      "बिना किसी बिचौलिये के सीधा डीबीटी ट्रांसफर"
+    ],
+    "hardRules": {
+      "minAge": 60,
+      "maxAge": 120,
+      "requiresBPL": true,
+      "maxAnnualIncome": 120000,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Applicant must be 60 years of age or older",
+      "Must belong to a household living Below the Poverty Line according to criteria prescribed by the Government"
+    ],
+    "specificConditionsHi": [
+      "आवेदक की आयु 60 वर्ष या उससे अधिक होनी चाहिए",
+      "सरकार द्वारा निर्धारित मानदंडों के अनुसार गरीबी रेखा से नीचे (बीपीएल) परिवार से होना चाहिए"
+    ],
+    "documents": [
+      {
+        "name": "Age Proof (Aadhaar / Voter ID / Birth Certificate)",
+        "nameHi": "आयु प्रमाण (आधार / मतदाता पहचान पत्र)",
+        "isMandatory": true,
+        "helpTip": "Document validating age 60+",
+        "helpTipHi": "60+ आयु को सत्यापित करने वाला दस्तावेज"
+      },
+      {
+        "name": "BPL Ration Card / BPL Certificate",
+        "nameHi": "बीपीएल राशन कार्ड / बीपीएल प्रमाण पत्र",
+        "isMandatory": true,
+        "helpTip": "Proof of inclusion in below poverty line register",
+        "helpTipHi": "गरीबी रेखा से नीचे रजिस्टर में शामिल होने का प्रमाण"
+      },
+      {
+        "name": "Bank / Post Office Passbook",
+        "nameHi": "बैंक / डाकघर पासबुक",
+        "isMandatory": true,
+        "helpTip": "Active individual account for monthly pension credit",
+        "helpTipHi": "मासिक पेंशन क्रेडिट के लिए सक्रिय व्यक्तिगत खाता"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Apply via National Social Assistance Programme portal (nsap.nic.in) or at the local Block Development Office (BDO) / Municipality.",
+        "instructionHi": "राष्ट्रीय सामाजिक सहायता कार्यक्रम पोर्टल (nsap.nic.in) या स्थानीय प्रखंड विकास कार्यालय (बीडीओ) / नगर पालिका में आवेदन करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Attach age proof, BPL card, and bank passbook details.",
+        "instructionHi": "आयु प्रमाण, बीपीएल कार्ड और बैंक पासबुक विवरण संलग्न करें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Local verification by Social Welfare Inspector followed by monthly pension disbursement.",
+        "instructionHi": "समाज कल्याण निरीक्षक द्वारा स्थानीय सत्यापन के बाद मासिक पेंशन वितरण शुरू।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Ministry of Rural Development / National Social Assistance Programme (NSAP)",
+      "officialPortalUrl": "https://nsap.nic.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "1800-111-555"
+    }
+  },
+  {
+    "id": "pm-awas-yojana",
+    "name": "Pradhan Mantri Awas Yojana (PMAY-Gramin / Urban)",
+    "nameHi": "प्रधानमंत्री आवास योजना (पीएमएवाई - ग्रामीण/शहरी)",
+    "category": "housing",
+    "targetPersonas": ["informal_worker", "farmer", "senior_citizen"],
+    "summary": "Affordable housing mission providing financial grant assistance of ₹1.20 Lakh to ₹2.50 Lakh for the construction of permanent (pucca) houses with hygienic toilets, clean cooking gas, and electricity connections.",
+    "summaryHi": "स्वच्छ शौचालय, स्वच्छ रसोई गैस और बिजली कनेक्शन के साथ पक्के मकानों के निर्माण के लिए ₹1.20 लाख से ₹2.50 लाख की वित्तीय अनुदान सहायता प्रदान करने वाला किफायती आवास मिशन।",
+    "benefits": [
+      "Direct financial grant of ₹1,20,000 (plains) to ₹1,30,000 (hilly/difficult areas) for rural house construction",
+      "Interest subsidy up to ₹2.67 Lakh on home loans for urban beneficiaries under Credit Linked Subsidy Scheme (CLSS)",
+      "Additional 90/95 days of unskilled wage labor support under MGNREGS (approx. ₹20,000+)",
+      "Assistance for toilet construction (₹12,000) under Swachh Bharat Mission"
+    ],
+    "benefitsHi": [
+      "ग्रामीण आवास निर्माण के लिए ₹1,20,000 (मैदानी) से ₹1,30,000 (पहाड़ी/कठिन क्षेत्र) का प्रत्यक्ष वित्तीय अनुदान",
+      "क्रेडिट लिंक्ड सब्सिडी योजना (सीएलएसएस) के तहत शहरी लाभार्थियों के लिए होम लोन पर ₹2.67 लाख तक की ब्याज सब्सिडी",
+      "मनरेगा के तहत 90/95 दिनों का अतिरिक्त अकुशल मजदूरी समर्थन (लगभग ₹20,000+)",
+      "स्वच्छ भारत मिशन के तहत शौचालय निर्माण हेतु ₹12,000 की सहायता"
+    ],
+    "hardRules": {
+      "minAge": 18,
+      "maxAge": 100,
+      "maxAnnualIncome": 300000,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Beneficiary family should not own a permanent pucca house in their name in any part of India",
+      "Selection in rural areas is prioritized through SECC 2011 / Awaas+ survey and verified by Gram Sabha"
+    ],
+    "specificConditionsHi": [
+      "लाभार्थी परिवार के पास भारत के किसी भी हिस्से में अपने नाम पर कोई पक्का मकान नहीं होना चाहिए",
+      "ग्रामीण क्षेत्रों में चयन एसईसीसी 2011 / आवास+ सर्वेक्षण के माध्यम से प्राथमिकता पर और ग्राम सभा द्वारा सत्यापित होता है"
+    ],
+    "documents": [
+      {
+        "name": "Aadhaar Card of all adult family members",
+        "nameHi": "परिवार के सभी वयस्क सदस्यों का आधार कार्ड",
+        "isMandatory": true,
+        "helpTip": "Identity and uniqueness verification",
+        "helpTipHi": "पहचान और विशिष्टता सत्यापन"
+      },
+      {
+        "name": "Job Card (MGNREGS) & Bank Account Details",
+        "nameHi": "जॉब कार्ड (मनरेगा) और बैंक खाता विवरण",
+        "isMandatory": true,
+        "helpTip": "Linked with DBT for installment payouts across construction stages (Foundation, Lintel, Roof)",
+        "helpTipHi": "निर्माण चरणों (नींव, लिंटेल, छत) में किस्त भुगतान के लिए डीबीटी से जुड़ा हुआ"
+      },
+      {
+        "name": "Certificate / Declaration of No Pucca House",
+        "nameHi": "पक्का मकान न होने का प्रमाण पत्र / स्व-घोषणा",
+        "isMandatory": true,
+        "helpTip": "Self-declaration verified by local ward / panchayat representative",
+        "helpTipHi": "स्थानीय वार्ड / पंचायत प्रतिनिधि द्वारा सत्यापित स्व-घोषणा"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Check inclusion in Awaas+ list via Gram Panchayat / Municipal Ward or apply at pmaymis.gov.in.",
+        "instructionHi": "ग्राम पंचायत / नगर पालिका वार्ड के माध्यम से आवास+ सूची में नाम जांचें या pmaymis.gov.in पर आवेदन करें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Geotag the existing kuccha house/plot site using the AwaasApp mobile application.",
+        "instructionHi": "AwaasApp मोबाइल एप्लिकेशन का उपयोग करके मौजूदा कच्चे मकान/प्लॉट स्थल को जियोटैग करें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Receive installment funds directly into bank account as construction milestones are verified.",
+        "instructionHi": "निर्माण के चरणों के सत्यापन के साथ सीधे बैंक खाते में किस्त की राशि प्राप्त करें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Ministry of Housing and Urban Affairs & Ministry of Rural Development",
+      "officialPortalUrl": "https://pmaymis.gov.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "011-23063285 / 1800-11-6446"
+    }
+  },
+  {
+    "id": "atal-pension-yojana",
+    "name": "Atal Pension Yojana (APY)",
+    "nameHi": "अटल पेंशन योजना (एपीवाई)",
+    "category": "social_security",
+    "targetPersonas": ["informal_worker", "farmer"],
+    "summary": "Government-backed guaranteed retirement pension scheme designed for unorganized sector workers providing guaranteed monthly pension of ₹1,000 to ₹5,000 based on contribution.",
+    "summaryHi": "असंगठित क्षेत्र के श्रमिकों के लिए बनाई गई सरकार समर्थित गारंटीकृत सेवानिवृत्ति पेंशन योजना, जो अंशदान के आधार पर ₹1,000 से ₹5,000 की गारंटीकृत मासिक पेंशन प्रदान करती है।",
+    "benefits": [
+      "Guaranteed monthly pension choice: ₹1,000, ₹2,000, ₹3,000, ₹4,000, or ₹5,000 per month from age 60 onwards",
+      "Lifetime pension to subscriber; upon demise, exact same pension to spouse; upon spouse demise, return of entire corpus to nominee",
+      "Tax benefits under Section 80CCD of the Income Tax Act"
+    ],
+    "benefitsHi": [
+      "गारंटीकृत मासिक पेंशन विकल्प: 60 वर्ष की आयु से ₹1,000, ₹2,000, ₹3,000, ₹4,000 या ₹5,000 प्रति माह",
+      "अभिदाता को आजीवन पेंशन; मृत्यु पर जीवनसाथी को समान पेंशन; जीवनसाथी की मृत्यु पर नॉमिनी को संपूर्ण फंड की वापसी",
+      "आयकर अधिनियम की धारा 80CCD के तहत कर लाभ"
+    ],
+    "hardRules": {
+      "minAge": 18,
+      "maxAge": 40,
+      "maxAnnualIncome": 500000,
+      "allowedStates": ["All India"]
+    },
+    "specificConditions": [
+      "Must be between 18 and 40 years of age at the time of joining",
+      "Must possess a savings bank account with active auto-debit facility",
+      "Must not be an income-tax payer"
+    ],
+    "specificConditionsHi": [
+      "जुड़ते समय आयु 18 से 40 वर्ष के बीच होनी चाहिए",
+      "सक्रिय ऑटो-डेबिट सुविधा वाला बचत बैंक खाता होना चाहिए",
+      "आयकर दाता नहीं होना चाहिए"
+    ],
+    "documents": [
+      {
+        "name": "Aadhaar Card",
+        "nameHi": "आधार कार्ड",
+        "isMandatory": true,
+        "helpTip": "KYC identification",
+        "helpTipHi": "केवाईसी पहचान"
+      },
+      {
+        "name": "Bank Savings Account Details",
+        "nameHi": "बैंक बचत खाता विवरण",
+        "isMandatory": true,
+        "helpTip": "Bank account where monthly auto-debit instruction is authorized",
+        "helpTipHi": "वह बैंक खाता जहां मासिक ऑटो-डेबिट निर्देश अधिकृत है"
+      }
+    ],
+    "applicationSteps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Visit your bank branch or use net banking / mobile banking app to find 'Atal Pension Yojana'.",
+        "instructionHi": "अपनी बैंक शाखा पर जाएं या नेट बैंकिंग / मोबाइल बैंकिंग ऐप में 'अटल पेंशन योजना' खोजें।"
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Select target pension amount (e.g. ₹5,000/mo) and nominee details.",
+        "instructionHi": "लक्षित पेंशन राशि (उदा. ₹5,000/माह) और नॉमिनी का विवरण चुनें।"
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Authorize auto-debit and instantly receive your Permanent Retirement Account Number (PRAN) card.",
+        "instructionHi": "ऑटो-डेबिट अधिकृत करें और अपना स्थायी सेवानिवृत्ति खाता संख्या (प्रान) कार्ड तुरंत प्राप्त करें।"
+      }
+    ],
+    "verifiedSource": {
+      "sourceName": "Pension Fund Regulatory and Development Authority (PFRDA) / NSDL",
+      "officialPortalUrl": "https://www.npscra.nsdl.co.in",
+      "lastVerifiedDate": "2025-02-15",
+      "helplineNumber": "1800-110-069"
+    }
+  }
+]
