@@ -235,28 +235,30 @@ export function calculateRelevanceScore(profile: UserProfile, scheme: VerifiedSc
   }
 
   // 4. Age & Vulnerability Status Bonus (up to 20 points)
-  let ageAndVulnerabilityPts = 10;
+  let ageAndVulnerabilityPts = 0;
   if (profile.hasBPLCard && (scheme.hardRules.requiresBPL || scheme.category === 'healthcare' || scheme.category === 'housing')) {
-    ageAndVulnerabilityPts += 10;
+    const pts = 10;
+    ageAndVulnerabilityPts += pts;
     contributions.push({
-      factor: "BPL Priority Priority Alignment",
+      factor: "BPL Priority Alignment",
       factorHi: "बीपीएल प्राथमिकता संरेखण",
-      points: 10,
+      points: pts,
       description: "BPL card holders receive priority allocation",
       descriptionHi: "बीपीएल कार्ड धारकों को प्राथमिकता आवंटन प्राप्त होता है"
     });
   } else if (profile.isDifferentlyAbled) {
-    ageAndVulnerabilityPts += 5;
+    const pts = 5;
+    ageAndVulnerabilityPts += pts;
     contributions.push({
       factor: "Differently-Abled Inclusivity",
       factorHi: "दिव्यांग समावेशन",
-      points: 5,
+      points: pts,
       description: "Dedicated accommodations available under public welfare norms",
       descriptionHi: "कल्याणकारी मानकों के तहत विशेष सुविधाएं उपलब्ध"
     });
   }
 
-  totalScore = Math.min(100, totalScore + (ageAndVulnerabilityPts > 10 ? 0 : ageAndVulnerabilityPts));
+  totalScore = Math.min(100, totalScore + ageAndVulnerabilityPts);
 
   // Determine score tier label
   let label: 'High Match' | 'Moderate Match' | 'Potential Match' = 'High Match';
