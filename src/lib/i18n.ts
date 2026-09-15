@@ -26,6 +26,50 @@ export const DICTIONARY = {
     demoPresetsSubtitle: "Select a pre-configured profile to test how Sahaay AI matches schemes for real-world vulnerable groups:",
     tryPersonaBtn: "Evaluate Profile",
 
+    // Architecture Pipeline
+    archBadge: "Architectural Transparency",
+    archTitle: "Two-Engine Architecture Pipeline",
+    archSubtitle: "A deliberate architectural separation of statutory compliance and artificial intelligence",
+    archCorePrincipleTitle: "The Core Principle",
+    archCorePrinciple: "Rules determine eligibility. AI explains and personalizes.",
+    archCorePrincipleDesc: "Statutory eligibility is determined by authoritative rules. Gemini AI is invoked only to reason over eligible schemes, explain relevance, and synthesize document checklists.",
+    archHandoverText: "AI receives only eligible candidates",
+    
+    // Engine 1 (Deterministic)
+    archEngineDeterministicTitle: "Deterministic Eligibility Engine",
+    archEngineDeterministicBadge: "Rule-Based Compliance",
+    archEngineDeterministicDesc: "Evaluates statutory constraints deterministically. AI does not determine statutory eligibility.",
+    
+    // Engine 2 (Generative Intelligence)
+    archEngineAiTitle: "Contextual Intelligence Engine",
+    archEngineAiBadge: "Gemini 2.5 Flash",
+    archEngineAiDesc: "Synthesizes personalized rationale, highlights critical cautions, and guides actionable next steps.",
+
+    // 6 Pipeline Stages
+    archStage1Title: "User Profile",
+    archStage1Subtitle: "Demographic & Socio-Economic Input",
+    archStage1Desc: "Captures age, state, area, category, income, occupation, landholding, BPL status, and needs in-memory.",
+
+    archStage2Title: "Rule-Based Eligibility Filtering",
+    archStage2Subtitle: "Statutory Criteria Engine",
+    archStage2Desc: "Evaluates hard age limits, income ceilings, land caps, occupation criteria, and social category rules.",
+
+    archStage3Title: "Eligible Scheme Candidates",
+    archStage3Subtitle: "Validated Candidate Cohort",
+    archStage3Desc: "Only schemes where the user strictly satisfies all statutory rules advance. Ineligible schemes are excluded.",
+
+    archStage4Title: "Gemini AI Reasoning",
+    archStage4Subtitle: "Contextual In-Memory Synthesis",
+    archStage4Desc: "Gemini 2.5 Flash analyzes the eligible subset against the user's specific circumstances and priorities.",
+
+    archStage5Title: "Personalized Explanations",
+    archStage5Subtitle: "Bilingual Context & Guidance",
+    archStage5Desc: "Synthesizes 'Why Relevant' explanations, essential cautions (e.g. Aadhaar seeding), and tailored steps.",
+
+    archStage6Title: "Verified Recommendations",
+    archStage6Subtitle: "Actionable Citizen Output",
+    archStage6Desc: "Delivers direct official .gov.in portal links, printable document checklists, and speech audio playback.",
+
     // Profile Wizard
     wizardTitle: "Scheme Eligibility Assessment",
     wizardSubtitle: "Answer a few questions to find potentially relevant social welfare programs.",
@@ -146,6 +190,50 @@ export const DICTIONARY = {
     demoPresetsTitle: "डेमो प्रोफाइल के साथ त्वरित मूल्यांकन",
     demoPresetsSubtitle: "विभिन्न वर्गों के लिए सहाय AI कैसे काम करता है, इसे तुरंत परखने के लिए एक प्रोफ़ाइल चुनें:",
     tryPersonaBtn: "प्रोफ़ाइल जांचें",
+
+    // Architecture Pipeline
+    archBadge: "आर्किटेक्चरल पारदर्शिता",
+    archTitle: "टू-इंजन आर्किटेक्चर पाइपलाइन",
+    archSubtitle: "संवैधानिक पात्रता नियमों और कृत्रिम बुद्धिमत्ता (AI) का सुविचारित तकनीकी विभाजन",
+    archCorePrincipleTitle: "मूल सिद्धांत",
+    archCorePrinciple: "पात्रता नियम तय करते हैं, एआई समझाता और व्यक्तिगत बनाता है।",
+    archCorePrincipleDesc: "पात्रता का निर्धारण केवल आधिकारिक सरकारी नियमों द्वारा होता है। जेमिनी एआई केवल पात्र योजनाओं का संदर्भ समझाने और दस्तावेज चेकलिस्ट तैयार करने के लिए काम करता है।",
+    archHandoverText: "एआई को केवल वही योजनाएं मिलती हैं जिनके लिए नागरिक पात्र है",
+    
+    // Engine 1 (Deterministic)
+    archEngineDeterministicTitle: "नियम-आधारित पात्रता इंजन",
+    archEngineDeterministicBadge: "आधिकारिक नियम अनुपालन",
+    archEngineDeterministicDesc: "सरकारी पात्रता नियमों का सटीक मूल्यांकन करता है। एआई वैधानिक पात्रता तय नहीं करता है।",
+    
+    // Engine 2 (Generative Intelligence)
+    archEngineAiTitle: "प्रासंगिक विश्लेषण इंजन",
+    archEngineAiBadge: "Google Gemini 2.5 Flash",
+    archEngineAiDesc: "व्यक्तिगत संदर्भ तैयार करता है, मुख्य सावधानियां बताता है और आवेदन के अगले कदम सुझाता है।",
+
+    // 6 Pipeline Stages
+    archStage1Title: "नागरिक प्रोफ़ाइल",
+    archStage1Subtitle: "जनसांख्यिकीय व आय विवरण",
+    archStage1Desc: "आयु, राज्य, क्षेत्र, श्रेणी, वार्षिक आय, व्यवसाय, भूमि और आवश्यकताओं को सुरक्षित रूप से दर्ज करता है।",
+
+    archStage2Title: "नियम-आधारित पात्रता फ़िल्टरिंग",
+    archStage2Subtitle: "संवैधानिक नियम मूल्यांकन",
+    archStage2Desc: "आयु सीमा, आय सीमा, भूमि सीमा और जाति/श्रेणी के आधिकारिक नियमों का मिलान करता है।",
+
+    archStage3Title: "पात्र योजना उम्मीदवार",
+    archStage3Subtitle: "सत्यापित उम्मीदवार समूह",
+    archStage3Desc: "केवल वही योजनाएं आगे बढ़ती हैं जिनके सभी नियम पूर्ण हों। अपात्र योजनाएं तुरंत हट जाती हैं।",
+
+    archStage4Title: "Gemini AI विश्लेषण",
+    archStage4Subtitle: "संदर्भ आधारित बुद्धिमत्ता",
+    archStage4Desc: "Gemini 2.5 Flash पात्र योजनाओं का नागरिक की विशिष्ट परिस्थितियों के आधार पर विश्लेषण करता है।",
+
+    archStage5Title: "व्यक्तिगत स्पष्टीकरण",
+    archStage5Subtitle: "द्विभाषी समझ व मार्गदर्शन",
+    archStage5Desc: "योजना की प्रासंगिकता, आवश्यक चेतावनियां (जैसे आधार लिंकिंग) और अगले कदम हिंदी व अंग्रेजी में प्रस्तुत करता है।",
+
+    archStage6Title: "सत्यापित अनुशंसाएं",
+    archStage6Subtitle: "कार्यान्वित परिणाम",
+    archStage6Desc: "आधिकारिक .gov.in पोर्टल लिंक, प्रिंट करने योग्य दस्तावेज चेकलिस्ट और ऑडियो वाचन प्रदान करता है।",
 
     // Profile Wizard
     wizardTitle: "योजना पात्रता मूल्यांकन",

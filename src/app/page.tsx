@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Navbar } from '../components/common/Navbar';
 import { Footer } from '../components/common/Footer';
 import { DemoPersonaChips } from '../components/presets/DemoPersonaChips';
+import { ArchitecturePipeline } from '../components/home/ArchitecturePipeline';
 import { Language, DICTIONARY } from '../lib/i18n';
 import { UserProfile } from '../types/profile';
 import { DemoPreset } from '../data/personas';
@@ -113,7 +114,7 @@ export default function LandingPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs font-extrabold uppercase tracking-widest text-govblue-600 bg-govblue-50 px-3 py-1 rounded-full border border-govblue-200">
-                Architectural Transparency
+                {currentLang === 'hi' ? 'त्वरित प्रक्रिया' : 'Simple 3 Steps'}
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-950 tracking-tight mt-3">
                 {dict.howItWorksTitle}
@@ -160,6 +161,25 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ARCHITECTURE PIPELINE SECTION */}
+        <section className="py-20 bg-slate-50/70 border-b border-slate-200" id="architecture">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-govblue-600 bg-govblue-50 px-3 py-1 rounded-full border border-govblue-200">
+                {dict.archBadge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-950 tracking-tight mt-3">
+                {dict.archTitle}
+              </h2>
+              <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+                {dict.archSubtitle}
+              </p>
+            </div>
+
+            <ArchitecturePipeline currentLang={currentLang} />
           </div>
         </section>
 
