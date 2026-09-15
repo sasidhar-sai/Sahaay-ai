@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { UserProfile, Gender, SocialCategory, Occupation, AreaType } from '@/types/profile';
 import { Language, DICTIONARY } from '@/lib/i18n';
 import { DemoPersonaChips } from '@/components/presets/DemoPersonaChips';
@@ -83,6 +83,33 @@ export const ProfileWizard: React.FC<ProfileWizardProps> = ({
     preferredLanguage: currentLang
   });
 
+  // Hydrate prefilled persona from sessionStorage safely after mount (client-side only)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    try {
+      const savedProfile = sessionStorage.getItem('sahaay_prefill_profile');
+      const savedPersonaId = sessionStorage.getItem('sahaay_selected_persona_id');
+
+      if (savedProfile) {
+        const parsed = JSON.parse(savedProfile);
+        if (parsed && typeof parsed === 'object') {
+          setFormData(prev => ({
+            ...prev,
+            ...parsed,
+            preferredLanguage: currentLang
+          }));
+        }
+      }
+
+      if (savedPersonaId) {
+        setSelectedPersonaId(savedPersonaId);
+      }
+    } catch (err) {
+      console.error('Failed to read prefill profile from sessionStorage:', err);
+    }
+  }, []);
+
   // Handle Demo Persona Preset Click
   const handleSelectPreset = (profile: UserProfile, persona: DemoPreset) => {
     setFormData({
@@ -91,6 +118,14 @@ export const ProfileWizard: React.FC<ProfileWizardProps> = ({
     });
     setSelectedPersonaId(persona.id);
     setErrors({});
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.setItem('sahaay_prefill_profile', JSON.stringify(profile));
+        sessionStorage.setItem('sahaay_selected_persona_id', persona.id);
+      } catch {
+        // Ignore storage errors in restricted browser contexts
+      }
+    }
   };
 
   // Field change handler
@@ -195,6 +230,14 @@ export const ProfileWizard: React.FC<ProfileWizardProps> = ({
     setSelectedPersonaId(undefined);
     setActiveStep(1);
     setErrors({});
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.removeItem('sahaay_prefill_profile');
+        sessionStorage.removeItem('sahaay_selected_persona_id');
+      } catch {
+        // Ignore storage errors in restricted browser contexts
+      }
+    }
   };
 
   return (
