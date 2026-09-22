@@ -4,18 +4,20 @@ import React, { useState } from 'react';
 import { Navbar } from '@/components/common/Navbar';
 import { Footer } from '@/components/common/Footer';
 import { ProfileWizard } from '@/components/wizard/ProfileWizard';
-import { SchemeCard } from '@/components/results/SchemeCard';
+import { SchemeCard, ActiveProfileBar, TwoEngineFunnel } from '@/components/results/SchemeCard';
 import { ExportChecklist } from '@/components/results/ExportChecklist';
 import { Language, DICTIONARY } from '@/lib/i18n';
 import { UserProfile } from '@/types/profile';
 import { MatchApiResponse, MatchedSchemeResult } from '@/types/match';
+import { DemoPreset } from '@/data/personas';
 import {
   CheckCircle2,
   AlertCircle,
   Filter,
   ArrowLeft,
   RotateCcw,
-  Info
+  Info,
+  SlidersHorizontal
 } from 'lucide-react';
 
 export default function CheckPage() {
@@ -27,10 +29,29 @@ export default function CheckPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [apiError, setApiError] = useState<string | null>(null);
 
-  // Handle Form Submission
-  const handleProfileSubmit = async (profile: UserProfile) => {
+  // Active Profile & Persona tracking
+  const [activeProfile, setActiveProfile] = useState<UserProfile | null>(null);
+  const [activePersonaId, setActivePersonaId] = useState<string | undefined>(undefined);
+  const [isWizardCollapsed, setIsWizardCollapsed] = useState(false);
+
+  // Smooth scroll helper targeting results dashboard
+  const scrollToResults = () => {
+    if (typeof window !== 'undefined') {
+      requestAnimationFrame(() => {
+        const resultsEl = document.getElementById('results-dashboard');
+        if (resultsEl) {
+          resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+  };
+
+  // Reusable profile submission flow
+  const handleProfileSubmit = async (profile: UserProfile, personaId?: string) => {
     setIsLoading(true);
     setApiError(null);
+    setActiveProfile(profile);
+    setActivePersonaId(personaId);
 
     try {
       const response = await fetch('/api/match', {
@@ -48,12 +69,10 @@ export default function CheckPage() {
       const data: MatchApiResponse = await response.json();
       setMatchResponse(data);
       setSelectedCategory('all');
+      setIsWizardCollapsed(true);
 
-      // Smooth scroll down to results
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 400, behavior: 'smooth' });
-      }
-    } catch (err) {
+      scrollToResults();
+    } catch {
       setApiError(
         currentLang === 'hi'
           ? "योजना मिलान करते समय एक त्रुटि उत्पन्न हुई। कृपया पुनः प्रयास करें।"
@@ -64,9 +83,31 @@ export default function CheckPage() {
     }
   };
 
+  // 1-Click Persona selection handler
+  const handleSelectPersona = (persona: DemoPreset) => {
+    const profileWithLang: UserProfile = {
+      ...persona.profile,
+      preferredLanguage: currentLang
+    };
+
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.setItem('sahaay_prefill_profile', JSON.stringify(persona.profile));
+        sessionStorage.setItem('sahaay_selected_persona_id', persona.id);
+      } catch {
+        // Storage access gracefully handled
+      }
+    }
+
+    handleProfileSubmit(profileWithLang, persona.id);
+  };
+
   const handleResetResults = () => {
     setMatchResponse(null);
     setApiError(null);
+    setActiveProfile(null);
+    setActivePersonaId(undefined);
+    setIsWizardCollapsed(false);
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -100,14 +141,28 @@ export default function CheckPage() {
           </div>
         </div>
 
-        {/* PROFILE WIZARD SECTION */}
-        <section aria-label="Profile Assessment">
-          <ProfileWizard
+        {/* PROFILE WIZARD OR COLLAPSED ACTIVE PROFILE BAR */}
+        {matchResponse && isWizardCollapsed && activeProfile ? (
+          <ActiveProfileBar
+            activeProfile={activeProfile}
+            activePersonaId={activePersonaId}
             currentLang={currentLang}
-            onSubmit={handleProfileSubmit}
+            onEditProfile={() => setIsWizardCollapsed(false)}
+            onReset={handleResetResults}
+            onSelectPersona={handleSelectPersona}
             isLoading={isLoading}
           />
-        </section>
+        ) : (
+          /* Profile Wizard Section */
+          <section aria-label="Profile Assessment">
+            <ProfileWizard
+              key={activePersonaId || 'custom-wizard'}
+              currentLang={currentLang}
+              onSubmit={(profile) => handleProfileSubmit(profile, activePersonaId)}
+              isLoading={isLoading}
+            />
+          </section>
+        )}
 
         {/* API ERROR MESSAGE */}
         {apiError && (
@@ -117,10 +172,13 @@ export default function CheckPage() {
           </div>
         )}
 
-        {/* RESULTS SECTION */}
+        {/* RESULTS SECTION WITH TWO-ENGINE DASHBOARD */}
         {matchResponse && (
-          <section className="mt-14 space-y-8" aria-label="Assessment Results">
-            {/* Results Header Bar */}
+          <section id="results-dashboard" className="mt-8 space-y-8" aria-label="Assessment Results">
+            {/* DYNAMIC TWO-ENGINE EVALUATION FUNNEL */}
+            <TwoEngineFunnel matchResponse={matchResponse} currentLang={currentLang} />
+
+            {/* Results Filter & Action Bar */}
             <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                 <div>
@@ -129,19 +187,16 @@ export default function CheckPage() {
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                       <span>{matchResponse.deterministicPassedCount} {dict.matchedCount}</span>
                     </span>
-                    <span className="text-xs text-slate-400">
-                      (Analyzed in {matchResponse.processingTimeMs}ms)
-                    </span>
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mt-1.5">
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mt-1.5">
                     {dict.resultsTitle}
-                  </h2>
+                  </h3>
                   <p className="text-xs text-slate-500 mt-0.5">
                     {dict.resultsSubtitle}
                   </p>
                 </div>
 
-                {/* Right Actions: Export Checklist Button */}
+                {/* Right Actions: Export Checklist & Reset */}
                 <div className="flex items-center gap-3">
                   <ExportChecklist
                     matchedSchemes={matchResponse.matchedSchemes}
@@ -219,14 +274,22 @@ export default function CheckPage() {
                 <p className="text-xs text-slate-600 leading-relaxed">
                   {dict.noMatchDesc}
                 </p>
-                <div className="pt-2">
+                <div className="pt-2 flex items-center justify-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setIsWizardCollapsed(false)}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-govblue-600 text-white text-xs font-bold hover:bg-govblue-700 transition-colors shadow-sm"
+                  >
+                    <SlidersHorizontal className="w-4 h-4" />
+                    <span>{dict.btnEditProfile}</span>
+                  </button>
                   <button
                     type="button"
                     onClick={handleResetResults}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-govblue-600 text-white text-xs font-bold hover:bg-govblue-700 transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-slate-200 transition-colors"
                   >
-                    <ArrowLeft className="w-4 h-4" />
-                    <span>{currentLang === 'hi' ? 'पुनः विवरण भरें' : 'Adjust Profile Criteria'}</span>
+                    <RotateCcw className="w-4 h-4" />
+                    <span>{dict.btnReset}</span>
                   </button>
                 </div>
               </div>
