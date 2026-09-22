@@ -8,6 +8,7 @@ import { DEMO_PERSONAS } from '../../src/data/personas';
 import { MatchedSchemeResult, MatchApiResponse } from '../../src/types/match';
 import { VerifiedScheme } from '../../src/types/scheme';
 import { UserProfile } from '../../src/types/profile';
+import { generateDeterministicFallbackInsight } from '../../src/lib/gemini';
 
 // Mock next/navigation for SSR
 vi.mock('next/navigation', () => ({
@@ -68,8 +69,8 @@ const mockMatchedItem: MatchedSchemeResult = {
     ]
   },
   aiInsights: {
-    whyRelevant: 'As a smallholder farmer in rural MP, you qualify for ₹6,000 annual direct income support.',
-    whyRelevantHi: 'मध्य प्रदेश के छोटे किसान के रूप में आप ₹6,000 की वार्षिक आय सहायता के पात्र हैं।',
+    whyRelevant: 'Based on the profile information provided, this scheme appears potentially relevant because your agricultural background aligns with direct income support provisions.',
+    whyRelevantHi: 'उपलब्ध प्रोफ़ाइल जानकारी के आधार पर, यह योजना संभावित रूप से प्रासंगिक प्रतीत होती है क्योंकि आपकी कृषि पृष्ठभूमि प्रत्यक्ष आय सहायता प्रावधानों के अनुकूल है।',
     keyConsiderations: ['Ensure Aadhaar is NPCI-seeded to your bank account.'],
     keyConsiderationsHi: ['सुनिश्चित करें कि आधार आपके बैंक खाते से एनपीसीआई-सीडेड है।'],
     recommendedNextSteps: ['Visit pmkisan.gov.in and click New Farmer Registration.'],
@@ -261,6 +262,7 @@ describe('Two-Engine Results Dashboard & Active Persona Bar (Improvement #7)', (
       );
 
       expect(decoded).toContain(DICTIONARY.en.funnelStatusConnected);
+      expect(decoded).toContain('Gemini 2.5 Flash Active');
     });
 
     it('shows deterministic fallback status when fallback engine was used', () => {
@@ -286,6 +288,11 @@ describe('Two-Engine Results Dashboard & Active Persona Bar (Improvement #7)', (
       );
 
       expect(decoded).toContain(DICTIONARY.en.funnelStatusFallback);
+      expect(decoded).toContain('Deterministic Fallback');
+      expect(decoded).not.toContain('Active (Deterministic Fallback)');
+      expect(decoded).toContain(DICTIONARY.en.engine1FunnelBadge);
+      expect(decoded).toContain('Deterministic Eligibility Rules');
+      expect(decoded).not.toContain('Statutory Rules');
     });
 
     it('shows no candidates status when 0 candidates qualified', () => {
@@ -461,6 +468,24 @@ describe('Two-Engine Results Dashboard & Active Persona Bar (Improvement #7)', (
 
       expect(result.raw).toContain('main');
       expect(result.decoded).toContain(DICTIONARY.en.wizardTitle);
+    });
+  });
+
+  describe('Advisory Non-Definitive Relevance Explanations', () => {
+    it('generates advisory language without definitive eligibility claims in fallback mode', () => {
+      const insight = generateDeterministicFallbackInsight(mockProfileFarmer, mockScheme);
+
+      // Must start with advisory phrasing
+      expect(insight.whyRelevant).toContain('Based on the profile information provided, this scheme appears potentially relevant because');
+      expect(insight.whyRelevantHi).toContain('उपलब्ध प्रोफ़ाइल जानकारी के आधार पर, यह योजना संभावित रूप से प्रासंगिक प्रतीत होती है क्योंकि');
+
+      // Must NOT contain definitive entitlement statements
+      expect(insight.whyRelevant.toLowerCase()).not.toContain('you are eligible to receive');
+      expect(insight.whyRelevant.toLowerCase()).not.toContain('you qualify for');
+
+      // Must preserve the government authority disclaimer
+      expect(insight.whyRelevant).toContain('Final eligibility and approval are determined exclusively by the relevant government authority.');
+      expect(insight.whyRelevantHi).toContain('अंतिम पात्रता और स्वीकृति केवल संबंधित सरकारी प्राधिकरण द्वारा निर्धारित की जाती है।');
     });
   });
 });

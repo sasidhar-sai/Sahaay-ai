@@ -24,30 +24,33 @@ export function generateDeterministicFallbackInsight(profile: UserProfile, schem
   const isWorker = scheme.category === 'livelihood' || ['street_vendor', 'daily_wage_worker'].includes(profile.occupation);
   const isSenior = scheme.category === 'social_security' && profile.age >= 60;
 
-  let whyRelevant = `This scheme matches your profile as a ${profile.occupation.replace(/_/g, ' ')} with an annual family income of ₹${profile.annualFamilyIncome.toLocaleString('en-IN')}.`;
-  let whyRelevantHi = `यह योजना आपकी प्रोफ़ाइल (${profile.occupation.replace(/_/g, ' ')}) और ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} की वार्षिक पारिवारिक आय से मेल खाती है।`;
+  const authorityNoticeEn = "Final eligibility and approval are determined exclusively by the relevant government authority.";
+  const authorityNoticeHi = "अंतिम पात्रता और स्वीकृति केवल संबंधित सरकारी प्राधिकरण द्वारा निर्धारित की जाती है।";
+
+  let whyRelevant = `Based on the profile information provided, this scheme appears potentially relevant because your profile as a ${profile.occupation.replace(/_/g, ' ')} with an annual family income of ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} aligns with the program criteria. ${authorityNoticeEn}`;
+  let whyRelevantHi = `उपलब्ध प्रोफ़ाइल जानकारी के आधार पर, यह योजना संभावित रूप से प्रासंगिक प्रतीत होती है क्योंकि ${profile.occupation.replace(/_/g, ' ')} के रूप में आपकी स्थिति और ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} की वार्षिक पारिवारिक आय योजना के मानदंडों के अनुकूल हैं। ${authorityNoticeHi}`;
 
   if (isFarmer) {
-    whyRelevant = `As an agricultural practitioner with ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} income, you are eligible to receive direct agricultural assistance and financial security under ${scheme.name}.`;
-    whyRelevantHi = `एक कृषि व्यवसायी के रूप में ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} आय के साथ, आप ${scheme.nameHi} के तहत प्रत्यक्ष कृषि सहायता प्राप्त करने के पात्र हैं।`;
+    whyRelevant = `Based on the profile information provided, this scheme appears potentially relevant because your agricultural background and annual family income of ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} align with its support criteria for farming families. ${authorityNoticeEn}`;
+    whyRelevantHi = `उपलब्ध प्रोफ़ाइल जानकारी के आधार पर, यह योजना संभावित रूप से प्रासंगिक प्रतीत होती है क्योंकि आपकी कृषि पृष्ठभूमि और ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} की वार्षिक पारिवारिक आय किसान परिवारों के लिए निर्धारित सहायता मानदंडों के अनुकूल हैं। ${authorityNoticeHi}`;
   } else if (isStudent) {
-    whyRelevant = `As an active student in the ${profile.socialCategory.toUpperCase()} category with family income under ₹${(scheme.hardRules.maxAnnualIncome || 250000).toLocaleString('en-IN')}, ${scheme.name} can subsidize your education and academic costs.`;
-    whyRelevantHi = `${profile.socialCategory.toUpperCase()} श्रेणी में नामांकित छात्र के रूप में, ${scheme.nameHi} आपके शैक्षणिक खर्चों में आर्थिक सहायता प्रदान कर सकती है।`;
+    whyRelevant = `Based on the profile information provided, this scheme appears potentially relevant because your student status in the ${profile.socialCategory.toUpperCase()} category with family income under ₹${(scheme.hardRules.maxAnnualIncome || 250000).toLocaleString('en-IN')} aligns with academic assistance provisions. ${authorityNoticeEn}`;
+    whyRelevantHi = `उपलब्ध प्रोफ़ाइल जानकारी के आधार पर, यह योजना संभावित रूप से प्रासंगिक प्रतीत होती है क्योंकि ${profile.socialCategory.toUpperCase()} श्रेणी में नामांकित छात्र के रूप में आपकी स्थिति और आय शैक्षणिक सहायता प्रावधानों के अनुकूल हैं। ${authorityNoticeHi}`;
   } else if (isWorker) {
-    whyRelevant = `As an informal worker/vendor in ${profile.area} area, ${scheme.name} provides vital financial liquidity and welfare support for your household.`;
-    whyRelevantHi = `${profile.area} क्षेत्र में एक अनौपचारिक कामगार/विक्रेता के रूप में, ${scheme.nameHi} आपके परिवार के लिए आवश्यक वित्तीय और कल्याणकारी सहायता प्रदान करती है।`;
+    whyRelevant = `Based on the profile information provided, this scheme appears potentially relevant because your informal work in the ${profile.area} area aligns with welfare and working capital criteria. ${authorityNoticeEn}`;
+    whyRelevantHi = `उपलब्ध प्रोफ़ाइल जानकारी के आधार पर, यह योजना संभावित रूप से प्रासंगिक प्रतीत होती है क्योंकि ${profile.area} क्षेत्र में आपकी आजीविका कल्याणकारी और कार्यशील पूंजी मानदंडों के अनुकूल है। ${authorityNoticeHi}`;
   } else if (isSenior) {
-    whyRelevant = `At age ${profile.age}, you qualify for dedicated senior citizen welfare benefits under ${scheme.name} to ensure sustained monthly income and security.`;
-    whyRelevantHi = `${profile.age} वर्ष की आयु में, आप निरंतर मासिक आय और सुरक्षा सुनिश्चित करने के लिए ${scheme.nameHi} के तहत वरिष्ठ नागरिक लाभों के पात्र हैं।`;
+    whyRelevant = `Based on the profile information provided, this scheme appears potentially relevant because your age (${profile.age} years) aligns with dedicated senior citizen welfare provisions for sustained security. ${authorityNoticeEn}`;
+    whyRelevantHi = `उपलब्ध प्रोफ़ाइल जानकारी के आधार पर, यह योजना संभावित रूप से प्रासंगिक प्रतीत होती है क्योंकि आपकी आयु (${profile.age} वर्ष) निरंतर सामाजिक सुरक्षा के लिए वरिष्ठ नागरिक कल्याण प्रावधानों के अनुकूल है। ${authorityNoticeHi}`;
   }
 
   const keyConsiderations = [
     `Mandatory documents must match Aadhaar name and date of birth exactly.`,
-    `Official approval is subject to document verification by ${scheme.verifiedSource.sourceName}.`
+    `Final eligibility and approval are determined exclusively by ${scheme.verifiedSource.sourceName}.`
   ];
   const keyConsiderationsHi = [
     `अनिवार्य दस्तावेजों का विवरण आधार नाम और जन्म तिथि से पूरी तरह मेल खाना चाहिए।`,
-    `अंतिम अनुमोदन ${scheme.verifiedSource.sourceName} द्वारा दस्तावेज सत्यापन के अधीन है।`
+    `अंतिम पात्रता और स्वीकृति केवल ${scheme.verifiedSource.sourceName} द्वारा निर्धारित की जाती है।`
   ];
 
   const recommendedNextSteps = [
@@ -135,16 +138,17 @@ ${JSON.stringify(schemesSummary, null, 2)}
 
 TASK:
 For EVERY scheme provided in Candidate Schemes, generate:
-1. "whyRelevant": A concise, encouraging, personalized explanation in English (2-3 sentences) explaining why this scheme is relevant to the user's specific socio-economic profile.
-2. "whyRelevantHi": The exact same reasoning translated naturally into Hindi.
+1. "whyRelevant": A concise, personalized explanation in English (2-3 sentences) explaining why this scheme appears potentially relevant. You MUST begin with or use phrasing such as: "Based on the profile information provided, this scheme appears potentially relevant because...". Do NOT make definitive legal eligibility or approval claims.
+2. "whyRelevantHi": The exact same reasoning translated naturally into Hindi. You MUST begin with or use phrasing such as: "उपलब्ध प्रोफ़ाइल जानकारी के आधार पर, यह योजना संभावित रूप से प्रासंगिक प्रतीत होती है क्योंकि...".
 3. "keyConsiderations": 2 concrete conditions/cautions the user should verify in English (e.g. Aadhaar seeding, income certificates).
 4. "keyConsiderationsHi": The key considerations in Hindi.
 5. "recommendedNextSteps": 2-3 actionable, numbered next steps in English (e.g. Gather documents, visit official portal).
 6. "recommendedNextStepsHi": The recommended next steps in Hindi.
 
 STRICT INSTRUCTIONS:
-- Do NOT claim legal guarantee of eligibility.
-- Always frame results as "potentially relevant" or "subject to official portal verification".
+- Do NOT make definitive legal eligibility or approval claims (e.g. never say "You are eligible to receive" or "You qualify for approval").
+- Always use language such as "Based on the profile information provided, this scheme appears potentially relevant because...".
+- Clearly preserve that final eligibility and approval are determined by the relevant government authority.
 - Output MUST be valid JSON adhering to the specified schema.`;
 
     const response = await ai.models.generateContent({
